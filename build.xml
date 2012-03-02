@@ -3,8 +3,14 @@
     <!-- Import ant macros -->
     <import file="src/build/macros.xml"/>
 
-    <target name="build" depends="clean">
-        <dellroad:rpmbuild>
+    <target name="git_version">
+        <exec outputproperty="git_version" executable="git" logError="true" failonerror="true">
+            <arg value="describe"/>
+        </exec>
+    </target>
+
+    <target name="build" depends="clean, git_version">
+        <dellroad:rpmbuild rpmflags="--define 'git_version ${git_version}'">
             <source-preparation>
                 <zip destfile="build/rpm/SOURCES/${ant.project.name}.zip">
                     <zipfileset dir="src">
