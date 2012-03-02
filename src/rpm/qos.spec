@@ -11,7 +11,7 @@
 %define fillupdir   %{_var}/adm/fillup-templates
 
 Name:               %{name}
-Version:            1.0.%{svn_revision}
+Version:            1.0
 Release:            1
 Buildarch:          noarch
 Summary:            A Simple Linux QoS Service
