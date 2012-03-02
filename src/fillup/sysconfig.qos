@@ -1,0 +1,79 @@
+#
+# Copyright (c) 2011 Archie L Cobbs.  All rights reserved.
+# Author: Archie L. Cobbs
+#
+# Configuration for "qos" router traffic prioritization setup.
+#
+# Assumptions:
+#
+#   o Nothing else uses queueing disciplines on the $QOS_DEV_IFB and $QOS_DEV_EXT interfaces
+#
+
+## Type:	string
+#
+# Define your UPLINk interface. This is the interface on which traffic shaping
+# will be applied. Currently the same "shape" is applied in directions.
+#
+QOS_DEV_EXT="eth0"
+
+## Type:	string
+#
+# Define the ifb interface to use. This is an internal interface used to peform
+# shaping on inbound traffic. Unless you're doing something unusual "ifb0" will work.
+#
+QOS_DEV_IFB="ifb0"
+
+## Type:	integer
+#
+# Define your actual downstream bandwidth in kilobits per second (kbps).
+#
+QOS_BANDWIDTH_DOWN_TOTAL="6000"
+
+## Type:	integer
+#
+# Define how much downstream bandwidth in kbps to protect for high priority traffic.
+#
+QOS_BANDWIDTH_DOWN_HIGHPRIO="256"
+
+## Type:	integer
+#
+# Define your actual upstream bandwidth in kbps.
+#
+QOS_BANDWIDTH_UP_TOTAL="6000"
+
+## Type:	integer
+#
+# Define how much upstream bandwidth in kbps to protect for high priority traffic.
+#
+QOS_BANDWIDTH_UP_HIGHPRIO="256"
+
+## Type:	yesno
+#
+# Whether to give special priority to small TCP ACK packets.
+#
+QOS_TCP_ACK="no"
+
+## Type:	yesno
+#
+# Whether to give special priority to interactive SSH packets.
+#
+QOS_SSH_INTERACTIVE="yes"
+
+## Type:	yesno
+#
+# Whether to give special priority to DNS traffic (TCP and UDP dest port 53).
+#
+QOS_DNS="no"
+
+## Type:	string
+#
+# Other traffic to give special priority to, specified via one or more tc(8) match
+# expressions, separated by commas.
+#
+# For example, for HTTP traffic destined to 1.2.3.4, you could use
+# "match ip dst 1.2.3.4 match ip dport 80 0xffff".
+#
+# See tc(8) for more information on syntax.
+#
+QOS_HIGH_PRIORITY=""
+

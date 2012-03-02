@@ -1,0 +1,19 @@
+<project name="qos" default="build" basedir="." xmlns:dellroad="urn:org.dellroad.ant">
+
+    <!-- Import ant macros -->
+    <import file="src/build/macros.xml"/>
+
+    <target name="build" depends="clean">
+        <dellroad:rpmbuild>
+            <source-preparation>
+                <zip destfile="build/rpm/SOURCES/${ant.project.name}.zip">
+                    <zipfileset dir="src">
+                        <include name="scripts/*"/>
+                        <include name="fillup/*"/>
+                    </zipfileset>
+                </zip>
+            </source-preparation>
+        </dellroad:rpmbuild>
+    </target>
+</project>
+

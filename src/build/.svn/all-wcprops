@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/296/trunk/src/build
+END
+macros.xml
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/296/trunk/src/build/macros.xml
+END
+extractSchemaUpdates.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/46/trunk/src/build/extractSchemaUpdates.xsl
+END
+ivysettings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/132/trunk/src/build/ivysettings.xml
+END
+reports-index.xsl
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/src/build/reports-index.xsl
+END
+setupSchemacheck.sql
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/src/build/setupSchemacheck.sql
+END
