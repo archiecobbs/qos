@@ -24,8 +24,6 @@ Requires:           iproute2
 Requires(post):     fillup
 
 %description
-qos: A Simple Linux QoS Service
-
 The Problem: Bufferbloat (see http://en.wikipedia.org/wiki/Bufferbloat)
 
     - Your SSH session turns to molasses when your kid watches YouTube
@@ -48,7 +46,6 @@ The Solution: QoS
     redirection.
 
 %prep
-rm -rf ${RPM_BUILD_ROOT}
 %setup -c
 
 %build
