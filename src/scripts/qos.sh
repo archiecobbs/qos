@@ -6,7 +6,7 @@
 # Should-Start:
 # Required-Stop: $network
 # Should-Stop:
-# Default-Start:  3 4 5
+# Default-Start:  3 5
 # Default-Stop:   0 1 2 6
 # Short-Description: QoS configuration
 # Description: Configures the kernel for routing traffic prioritization
@@ -252,6 +252,10 @@ case "$1" in
         echo -n "Stopping QoS "
         clear_qos || true
         rc_status -v
+        ;;
+    reload)
+        $0 stop
+        $0 start
         ;;
     restart)
         $0 stop
