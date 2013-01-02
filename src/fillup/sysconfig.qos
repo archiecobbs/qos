@@ -11,8 +11,8 @@
 
 ## Type:	string
 #
-# Define your UPLINk interface. This is the interface on which traffic shaping
-# will be applied. Currently the same "shape" is applied in directions.
+# Define your UPLINK interface. This is the interface on which traffic shaping is applied.
+# We assume that all traffic coming to/from the Internet goes through this interface.
 #
 QOS_DEV_EXT="eth0"
 
